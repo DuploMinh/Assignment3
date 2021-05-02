@@ -8,18 +8,15 @@ def op_a():
 
 
 def op_b():
-    i = status.status()
-    return i()
+    status.status()
 
 
 def op_c():
-    i = astro_trivia.get_questions()
-    return i()
+    astro_trivia.get_questions()
 
 
 def op_d():
-    i = quit()
-    return i()
+    quit()
 
 
 def get_options():
