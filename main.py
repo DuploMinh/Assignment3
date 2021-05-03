@@ -25,7 +25,7 @@ def get_options():
             "What would you like to do? \n\tA. Access logging\n\tB. View current status.\n\tC. Play a game of "
             "Trivia\n\tD. Quit\nYour choice: ").lower()
         if option not in ['a', 'b', 'c', 'd']:
-            print("Invalid choice")
+            print("Invalid choice!!! Try Again~~")
             continue
         else:
             break
@@ -41,7 +41,7 @@ def get_options():
 if __name__ == "__main__":
     while True:
         get_options()
-        if input("Do you want to do any thing else? (Y/N) ").strip().lower() == "y":
+        if input("Do you want to do any thing else? (Y/N)\nYour choice: ").lower() == "y":
             continue
         else:
             break

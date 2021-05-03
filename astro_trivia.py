@@ -14,9 +14,9 @@ def get_questions():
     num = 0
     while True:
         try:
-            num = int(input("Welcome to Trivia, how many questions would you like to play?(Max 10) ").strip())
+            num = int(input("Welcome to Trivia, how many questions would you like to play?(Max 10)\nQuestion Numbers: "))
         except ValueError:
-            print("Sorry, I didn't understand that.")
+            print("Sorry, I didn't understand that. Please enter a valid number~~")
             continue
         break
     request = requests.get('https://opentdb.com/api.php?amount={}&type=multiple&encode=base64'.format(num))
@@ -44,7 +44,7 @@ def get_questions():
         print("C. " + decode_utf(c))
         print("D. " + decode_utf(d))
         while True:
-            user_answer = input().lower().strip()
+            user_answer = input("Your Answer: ").lower()
             if user_answer not in ['a', 'b', 'c', 'd']:
                 print("Invalid input.")
                 continue
@@ -57,7 +57,7 @@ def get_questions():
         else:
             print("Incorrect. The correct answer is {}.".format(decode_utf(correct_answer)))
     print("Congrats! You got {} out of {} questions correct.".format(correct_count, num))
-    if input("Do you want to play again?(Y/N)").strip().lower() == 'y':
+    if input("Do you want to play again?(Y/N): ").lower() == 'y':
         get_questions()
 
 
