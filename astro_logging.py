@@ -7,15 +7,15 @@ conn = db_connection.create_connection(db_file)
 
 def logging():
     while True:
-        option = input("What do you want to do?\n\tA. Create new log\n\tB. View previous log?").lower().strip()
+        option = input("What do you want to do?\n\tA. Create new log\n\tB. View previous log?\nYour choice: ").lower().strip()
         if option in ['a', 'b']:
             break
         else:
-            print("Invalid option")
+            print("Invalid option!! Try Again~~")
             continue
 
     def op_a():
-        print("The log number is {}".format(db_connection.new_log(conn)))
+        print("The log number is: {}".format(db_connection.new_log(conn)))
 
     def op_b():
         db_connection.get_log(conn)
