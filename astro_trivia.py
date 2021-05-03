@@ -4,10 +4,10 @@ import random
 
 
 def decode_b64(entry):
-    input_bytes = entry.encode('ascii')
-    base64_bytes = base64.b64decode(input_bytes)
-    base64_message = base64_bytes.decode('utf-8')
-    return base64_message
+    b64_bytes = entry.encode('ascii')
+    utf_bytes = base64.b64decode(b64_bytes)
+    output = utf_bytes.decode('utf-8')
+    return output
 
 
 def get_questions():
