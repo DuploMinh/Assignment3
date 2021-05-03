@@ -3,7 +3,7 @@ import base64
 import random
 
 
-def decode_utf(entry):
+def decode_b64(entry):
     input_bytes = entry.encode('ascii')
     base64_bytes = base64.b64decode(input_bytes)
     base64_message = base64_bytes.decode('utf-8')
@@ -24,8 +24,8 @@ def get_questions():
     correct_count = 0
     for i in range(num):
         questions = result[i]
-        category = decode_utf(questions['category'])
-        difficulty = decode_utf(questions['difficulty'])
+        category = decode_b64(questions['category'])
+        difficulty = decode_b64(questions['difficulty'])
         question = questions['question']
         correct_answer = questions['correct_answer']
         answers = questions['incorrect_answers'] + [correct_answer]
@@ -38,11 +38,11 @@ def get_questions():
         d = random.choice(answers)
         answer_dict = {'a': a, 'b': b, 'c': c, 'd': d}
         print("Question {}. This is a/an {} question and the category is: {}".format(i + 1, difficulty, category))
-        print(decode_utf(question))
-        print("A. " + decode_utf(a))
-        print("B. " + decode_utf(b))
-        print("C. " + decode_utf(c))
-        print("D. " + decode_utf(d))
+        print(decode_b64(question))
+        print("A. " + decode_b64(a))
+        print("B. " + decode_b64(b))
+        print("C. " + decode_b64(c))
+        print("D. " + decode_b64(d))
         while True:
             user_answer = input("Your Answer: ").lower().strip()
             if user_answer not in ['a', 'b', 'c', 'd']:
@@ -55,7 +55,7 @@ def get_questions():
             print("Congratulation, you are correct!")
             correct_count += 1
         else:
-            print("Incorrect. The correct answer is {}.".format(decode_utf(correct_answer)))
+            print("Incorrect. The correct answer is {}.".format(decode_b64(correct_answer)))
     print("Congrats! You got {} out of {} questions correct.".format(correct_count, num))
     if input("Do you want to play again?(Y/N): ").strip().lower() == 'y':
         get_questions()
