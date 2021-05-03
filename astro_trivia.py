@@ -14,7 +14,8 @@ def get_questions():
     num = 0
     while True:
         try:
-            num = int(input("Welcome to Trivia, how many questions would you like to play?(Max 10)\nQuestion Numbers: ").strip())
+            num = int(input(
+                "Welcome to Trivia, how many questions would you like to play?(Max 10)\nQuestion Numbers: ").strip())
         except ValueError:
             print("Sorry, I didn't understand that. Please enter a valid number~~")
             continue
