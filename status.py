@@ -1,6 +1,8 @@
 import time 
 from datetime import datetime
 import os 
+import keyboard
+import sys
 def time_traveled():
     """Get the time passed since the launched time"""
     outfile          = open("time.txt","r")
@@ -42,7 +44,9 @@ def status():
     ship_health         = 0 #percentage
     crew_members_health = 0 #percentage
     """Display Data"""
-    while distance_to_M != 0:       
+    while distance_to_M != 0:    
+        if keyboard.is_pressed("Esc"):
+            sys.exit(0)
         clear_screen()  
         time_passed += 1 #Constantly display data every second            
         #Distance From Earth, updating every second
@@ -80,6 +84,6 @@ def status():
         print("Ship Health Status   |" + str(ship_health) + " %")
         print("_____________________|____________________________")
         print("Crew Health Status   |" + str(crew_members_health) + " %")
-        print("_____________________|____________________________")
-        time.sleep(1)           
-status()
+        print("_____________________|____________________________")        
+        print("\n\nPress Esc to exit")
+        time.sleep(1)     

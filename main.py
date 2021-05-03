@@ -8,25 +8,22 @@ def op_a():
 
 
 def op_b():
-    i = status.status()
-    return i()
+    status.status()
 
 
 def op_c():
-    i = astro_trivia.get_questions()
-    return i()
+    astro_trivia.get_questions()
 
 
 def op_d():
-    i = quit()
-    return i()
+    quit()
 
 
 def get_options():
     while True:
         option = input(
             "What would you like to do? \n\tA. Access logging\n\tB. View current status.\n\tC. Play a game of "
-            "Trivia\n\tD. Quit ").strip().lower()
+            "Trivia\n\tD. Quit\nYour choice: ").lower()
         if option not in ['a', 'b', 'c', 'd']:
             print("Invalid choice")
             continue
@@ -42,4 +39,9 @@ def get_options():
 
 
 if __name__ == "__main__":
-    get_options()
+    while True:
+        get_options()
+        if input("Do you want to do any thing else? (Y/N) ").strip().lower() == "y":
+            continue
+        else:
+            break
