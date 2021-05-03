@@ -50,15 +50,15 @@ LIMIT ? '''
 
 
 def new_log(conn):
-    astronaut_name = input("Who is making this log? ")
-    content = input("What is the content? ")
+    astronaut_name = input("Who is making this log?\nInput: ")
+    content = input("What is the content?\nInput: ")
     log_message = (astronaut_name, content)
     row_id = insert_log(conn, log_message)
     print(row_id)
 
 
 def get_log(conn):
-    number_of_logs = input("How many logs do you want to retrieve? ")
+    number_of_logs = input("How many logs do you want to retrieve?\nInput: ")
     logs = select_log(conn, number_of_logs)
     for log in logs:
         print("Log number {} by {} on {}: {}".format(log[0], log[1], log[3], log[2]))
