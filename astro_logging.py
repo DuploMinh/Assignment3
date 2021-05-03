@@ -1,6 +1,6 @@
 import db_connection
 
-db_file = r"db"
+db_file = r"db.sqlite3"
 
 conn = db_connection.create_connection(db_file)
 
