@@ -23,7 +23,7 @@ def get_options():
     while True:
         option = input(
             "What would you like to do? \n\tA. Access logging\n\tB. View current status.\n\tC. Play a game of "
-            "Trivia\n\tD. Quit\nYour choice: ").lower()
+            "Trivia\n\tD. Quit\nYour choice: ").strip().lower()
         if option not in ['a', 'b', 'c', 'd']:
             print("Invalid choice!!! Try Again~~")
             continue
