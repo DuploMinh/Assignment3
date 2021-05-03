@@ -4,6 +4,11 @@ import random
 
 
 def decode_b64(entry):
+    """
+    This function take in base64 code in ascii format and convert it into utf-8 string
+    :param entry:
+    :return: utf-8 string
+    """
     b64_bytes = entry.encode('ascii')
     utf_bytes = base64.b64decode(b64_bytes)
     output = utf_bytes.decode('utf-8')
@@ -11,6 +16,10 @@ def decode_b64(entry):
 
 
 def get_questions():
+    """
+    This function get trivia questions from opentdb.com api and generate an interactive quiz based on the questions
+    :return:
+    """
     num = 0
     while True:
         try:

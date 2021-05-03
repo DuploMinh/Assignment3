@@ -19,7 +19,7 @@ def create_connection(db_file):
 
 def insert_log(conn, message):
     """
-    Create a new task
+    Create a new log
     :param conn:
     :param message:
     :return:
@@ -34,7 +34,7 @@ def insert_log(conn, message):
 
 def select_log(conn, amount):
     """
-    Create a new task
+    Select old logs
     :param conn:
     :param amount:
     :return:
