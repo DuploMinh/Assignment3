@@ -41,7 +41,7 @@ def get_options():
 if __name__ == "__main__":
     while True:
         get_options()
-        if input("Do you want to do any thing else? (Y/N)\nYour choice: ").lower() == "y":
+        if input("Do you want to do any thing else? (Y/N)\nYour choice: ").strip().lower() == "y":
             continue
         else:
             break
