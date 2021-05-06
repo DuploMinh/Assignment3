@@ -50,6 +50,11 @@ LIMIT ? '''
 
 
 def new_log(conn):
+    """
+
+    :param conn:
+    :return:
+    """
     astronaut_name = input("Who is making this log?\nInput: ")
     content = input("What is the content?\nInput: ")
     log_message = (astronaut_name, content)
