@@ -42,33 +42,33 @@ def status():
     """Initialize Data"""
     v = 39500  # km/h
     total_distance = 305000000  # km
-    distance_from_E = v * (time_passed / 3600)
-    distance_to_M = total_distance - distance_from_E
-    arrival_time = distance_to_M / v
-    time_travel = distance_from_E / v
+    distance_from_e = v * (time_passed / 3600)
+    distance_to_m = total_distance - distance_from_e
+    arrival_time = distance_to_m / v
+    time_travel = distance_from_e / v
     fuel_level = 1000000  # liters
     fuel_burn_rate = 0.01  # liters/km
     ship_health = 0  # percentage
     crew_members_health = 0  # percentage
     """Display Data"""
     try:
-        while distance_to_M != 0:
+        while distance_to_m != 0:
             clear_screen()
             time_passed += 1  # Constantly display data every second
             # Distance From Earth, updating every second
-            distance_from_E = v * (time_passed / 3600)
+            distance_from_e = v * (time_passed / 3600)
             # Distance To Mars, updating every second
-            distance_to_M = total_distance - distance_from_E
+            distance_to_m = total_distance - distance_from_e
             # Arrival Time Calculation
-            arrival_time = distance_to_M / v
+            arrival_time = distance_to_m / v
             # Time Traveled Calculation
-            time_travel = distance_from_E / v
+            time_travel = distance_from_e / v
             # Fuel Level Calculation
-            fuel_level = fuel_level - distance_from_E * fuel_burn_rate
+            fuel_level = fuel_level - distance_from_e * fuel_burn_rate
             # Ship Health is deteriorated by 1% every hour
-            ship_health = 100 - int(distance_from_E / 10000)
+            ship_health = 100 - int(distance_from_e / 10000)
             # Crew Member Health
-            crew_members_health = 100 - int(distance_from_E / 50000)
+            crew_members_health = 100 - int(distance_from_e / 50000)
             # Print Data
             print("Local Time: ", time.ctime())
             print("Velocity             |" + str(v) + " Kilometer/Hour")
@@ -77,9 +77,9 @@ def status():
             print("_____________________|____________________________")
             print("Fuel Burn Rate       |" + str(fuel_burn_rate) + " Liter/Kilometer")
             print("_____________________|____________________________")
-            print("Distance From Earth  |" + str('%.2f' % distance_from_E) + " Kilometers")
+            print("Distance From Earth  |" + str('%.2f' % distance_from_e) + " Kilometers")
             print("_____________________|____________________________")
-            print("Distance To Mars     |" + str('%.2f' % distance_to_M) + " Kilometers")
+            print("Distance To Mars     |" + str('%.2f' % distance_to_m) + " Kilometers")
             print("_____________________|____________________________")
             print("Time Of Arrival      |" + str('%.2f' % arrival_time) + " Hours")
             print("_____________________|____________________________")

@@ -51,8 +51,8 @@ LIMIT ? '''
 
 def new_log(conn):
     """
-
-    :param conn:
+    Insert a new log into a SQLite database
+    :param conn: Connection object
     :return:
     """
     astronaut_name = input("Who is making this log?\nInput: ")
@@ -63,6 +63,11 @@ def new_log(conn):
 
 
 def get_log(conn):
+    """
+    Retrieve logs from SQLite database
+    :param conn: connection object
+    :return:
+    """
     number_of_logs = input("How many logs do you want to retrieve?\nInput: ")
     logs = select_log(conn, number_of_logs)
     for log in logs:

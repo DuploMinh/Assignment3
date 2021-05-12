@@ -6,6 +6,11 @@ conn = db_connection.create_connection(db_file)
 
 
 def logging():
+    """
+    Initiate logging process
+    :return:
+    """
+
     while True:
         option = input(
             "What do you want to do?\n\tA. Create new log\n\tB. View previous log?\nYour choice: ").lower().strip()
